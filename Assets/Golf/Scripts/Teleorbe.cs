@@ -1,19 +1,21 @@
+
 using UnityEngine;
 
-public class Teleorbe : MonoBehaviour
+public class Teleporter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // if(ball.istouching = true)
-        // {
-        //     Telport the Teleorbe
-        // }
-    }
+    // Assign the destination Transform in the Inspector
+    public Transform destinationPoint; 
 
-    // Update is called once per frame
-    void Update()
+    // This function is called when a Collider enters the trigger
+    void OnTriggerEnter(Collider other)
     {
-        
+        // Optional: Check if the entering object has a specific tag (e.g., "Player")
+        if (other.CompareTag("Ball")) 
+        {
+            // Teleport the object to the destination point
+            other.transform.position = destinationPoint.position;
+        }
     }
 }
+
+
