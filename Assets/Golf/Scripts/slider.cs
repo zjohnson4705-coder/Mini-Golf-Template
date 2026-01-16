@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class slider : MonoBehaviour
+public class Slider : MonoBehaviour
 {
-    public int speed = 20;
     public Transform pointA;
     public Transform pointB;
-    public float speed = 1f
-    private float t = 0f
+    public float speed = 1f;
+    private float t = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
