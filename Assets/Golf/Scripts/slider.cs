@@ -15,7 +15,10 @@ public class Slider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime * speed;
+        
+         t = Mathf.PingPong(Time.time * speed, 1f);
         transform.position = Vector3.Lerp(pointA.position, pointB.position, t);
+        //t += Time.deltaTime * speed;
+        //transform.position = Vector3.Lerp(pointA.position, pointB.position, t);
     }
 }
